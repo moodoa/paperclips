@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block div %}
+    <div class="center">
+        {% for info in infos %}
+            <tr>
+                <td>{{ info.messages }}</td>
+                <br>
+            </tr>
+        {% endfor %}
+    </div>
+    <form action="/find" method="POST">
+        <input type="text", name="clip", placeholder="your paperclip", class="bar">
+        <input type="text", name="wanted_gender", placeholder="which gender you wanna find? male or female", class="bar">
+        <input type="submit", value="FIND", class="btn">
+    </form>
+    <a href="/submit", class="btn">GO TO SUBMIT PAGE</a>
+
+{% endblock %}
